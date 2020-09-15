@@ -12,7 +12,10 @@ if (process.env.NODE_ENV == undefined) {
 }
 
 const app = express();
-
+app.use((req, res, nex) => {
+  console.log("app inicializada");
+  next();
+});
 app.use("/", router);
 
 app.listen(process.env.PORT, () => {

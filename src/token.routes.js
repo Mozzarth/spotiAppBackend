@@ -2,6 +2,7 @@ const router = require("express").Router();
 const fetch = require("node-fetch");
 
 router.use("/token", (req, res) => {
+  console.log("generando token");
   var urlencoded = new URLSearchParams();
   urlencoded.append("grant_type", "client_credentials");
   urlencoded.append("client_id", process.env.ClIENT_ID);
@@ -20,6 +21,7 @@ router.use("/token", (req, res) => {
 });
 
 router.use((req, res) => {
+  console.log("ruta no encontrada");
   return res.send("Rout not found");
 });
 
