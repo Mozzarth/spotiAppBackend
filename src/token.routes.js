@@ -16,7 +16,7 @@ router.use("/token", (req, res) => {
 
   fetch("https://accounts.spotify.com/api/token", requestOptions)
     .then((response) => response.text())
-    .then((result) => res.send(result))
+    .then((result) => res.send(JSON.parse(result)))
     .catch((error) => console.log("error", error));
 });
 
