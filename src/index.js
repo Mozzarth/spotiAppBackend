@@ -12,7 +12,7 @@ if (process.env.NODE_ENV == undefined) {
 }
 
 const app = express();
-app.use((req, res, nex) => {
+app.use((req, res, next) => {
   console.log("app inicializada");
   next();
 });
