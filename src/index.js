@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const { router } = require("./token.routes");
+const cors = require("cors");
 
 if (process.env.NODE_ENV == undefined) {
   let result = dotenv.config();
@@ -12,6 +13,8 @@ if (process.env.NODE_ENV == undefined) {
 }
 
 const app = express();
+app.use(cors());
+
 app.use((req, res, next) => {
   console.log("app inicializada");
   next();
